@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Patel - Data Analyst | AI Engineer | SQL Developer | ETL Developer</title>
+    <meta name="description" content="Building modern web applications with clean code and great UX. Portfolio showcasing projects, skills, and experience.">
+    <meta name="keywords" content="Full Stack Developer, Web Developer, React, Next.js, Portfolio">
+    <link rel="icon" href="../portfolio/public/images/Meet2.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W97NX7TT8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3W97NX7TT8');
+    </script>
+</head>
+<body class="gradient-bg">
+    <!-- Navigation -->
+    <nav id="navigation">
+        <div class="container">
+            <div class="nav-content">
+                <h2><a href="#hero" class="logo gradient-text">Meet Patel</a></h2>
+                
+                <div class="nav-desktop" id="navMenu">
+                    <a href="#hero" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#certificates" class="nav-link">Achievements & Certificates</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button id="themeToggle" class="theme-toggle">
+                        <i class="fas fa-sun sun-icon"></i>
+                        <i class="fas fa-moon moon-icon"></i>
+                    </button>
+                </div>
+
+                <div class="nav-mobile">
+                    <button id="themeToggleMobile" class="theme-toggle">
+                        <i class="fas fa-sun sun-icon"></i>
+                        <i class="fas fa-moon moon-icon"></i>
+                    </button>
+                    <button id="menuToggle" class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#hero" class="mobile-link">Home</a>
+                <a href="#about" class="mobile-link">About</a>
+                <a href="#experience" class="mobile-link">Experience</a>
+                <a href="#skills" class="mobile-link">Skills</a>
+                <a href="#education" class="mobile-link">Education</a>
+                <a href="#certificates" class="mobile-link">Achievements & Certificates</a>
+                <a href="#projects" class="mobile-link">Projects</a>
+                <a href="#contact" class="mobile-link">Contact</a>
+            </div>
+            
+            <div class="menu-backdrop" id="menuBackdrop"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="glass-background">
+            <div class="glass-blob glass-blob-1"></div>
+            <div class="glass-blob glass-blob-2"></div>
+            <div class="glass-blob glass-blob-3"></div>
+        </div>
+        <div class="particles" id="particles"></div>
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="profile-photo">
+                    <div class="profile-glow"></div>
+                    <img src="assets/images/Meet2.png" alt="Meet Patel" id="profileImage">
+                </div>
+
+                <div class="hero-text">
+                    <p class="hero-greeting">Hi, I am</p>
+                    <h1 class="hero-name" id="heroName">Meet Patel</h1>
+                    <h2 class="hero-profession gradient-text" id="heroTitle">
+                        <span id="typewriter"></span>
+                        <span class="typewriter-cursor">|</span>
+                    </h2>
+                    <p class="hero-education">MS in Computer Information Systems @ UHCL </p>
+                    <div class="hero-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="heroLocation"><b>Houston, TX, USA</b></span>
+                    </div>
+                    <p class="hero-tagline" id="heroTagline">Specialize in turning complex data into actionable insights and dashboards that drive strategic decisions.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number gradient-text">2+</h3>
+                            <p class="stat-label">Years of Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number gradient-text">12+</h3>
+                            <p class="stat-label">Projects Completed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary glow-effect">View Projects</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        <a href="assets/resume/Meet_Patel_Resume_New.pdf" download="Meet_Patel_Resume.pdf" class="btn btn-outline">Download Resume</a>
+                    </div>
+
+                    <div class="social-links" id="socialLinks">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-card">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <p class="quote-text">"Dream is not that which you see while sleeping, it is something that does not let you sleep."</p>
+                <p class="quote-author">- Dr. APJ Abdul Kalam</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text">About Me</h2>
+            <p class="section-subtitle">Learn more about my journey and expertise</p>
+            
+            <div class="about-card">
+                <div class="about-content">
+                    <div class="about-text">
+                        
+                        <p class="about-bio">
+                            I'm a <strong>data-driven professional with 2+ years of experience </strong>transforming complex datasets into strategic insights and building intelligent systems that solve real-world problems. I hold my <strong>Master's in Computer Information Systems with Specialization in Data Science at the University of Houston Clear Lake</strong>, I combine academic excellence with hands-on industry experience to deliver impactful solutions.
+                        </p>
+                        <p class="about-bio">
+                            As a <strong>Graduate Teaching & Research Assistant</strong> at UHCL, I mentor students in data analytics and machine learning while conducting cutting-edge AI research. Previously, as a <strong>Data Analyst at Archi Farming Equipment</strong>, I automated Data workflows (saving 15+ hours weekly), improved data accuracy by 85%, and optimized inventory forecasting that directly enhanced operational efficiency and campaign performance.
+                        </p>
+                        <p class="about-bio">
+                             My technical journey spans diverse, high-impact projects: I've architected an <strong>Agentic AI framework</strong> for algorithmic options trading with multi-agent systems and real-time market integration; designed <strong>enterprise ETL pipelines</strong> processing millions of records with 99.9% accuracy, and created <strong>interactive dashboards</strong> in Power BI and Tableau that drive data-informed decision-making.
+                        </p>
+                        <p class="about-bio">
+                           I build solutions that solve real problems and create measurable impact through data and AI. Let's connect!
+                        </p>
+                    </div>
+
+                    <div class="stats-grid" id="statsGrid">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <div class="glass-background">
+            <div class="glass-blob glass-blob-1"></div>
+            <div class="glass-blob glass-blob-2"></div>
+            <div class="glass-blob glass-blob-3"></div>
+        </div>
+        
+        <div class="container">
+            <h2 class="section-title gradient-text" style="position: relative; z-index: 1;">Work Experience</h2>
+            <p class="section-subtitle" style="position: relative; z-index: 1;">My professional journey</p>
+            
+            <div class="glass-bento-grid">
+                <!-- Large Featured Card - Main Experience -->
+                <div class="glass-bento-item glass-bento-item-1">
+                    <div>
+                        <h3 class="bento-title gradient-text">Graduate Teaching & Research Assistant</h3>
+                        <p class="bento-company">University of Houston Clear-Lake</p>
+                        <div class="bento-meta">
+                            <i class="fas fa-calendar"></i>
+                            <span>Aug 2025 — Jan 2026</span>
+                        </div>
+                        <div class="bento-meta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Houston, TX, USA</span>
+                        </div>
+                        <ul class="bento-list">
+                            <li>Teaching data analytics & SAP courses</li>
+                            <li>Conducting AI research</li>
+                            <li>Educational material development</li>
+                            <li>Student mentoring</li>
+                        </ul>
+                    </div>
+                    <button class="bento-button" onclick="openResponsibilitiesModal('exp1')">
+                        <i class="fas fa-arrow-right"></i> View Full Responsibilities
+                    </button>
+                </div>
+
+                <!-- Large Featured Card - Secondary Experience -->
+                <div class="glass-bento-item glass-bento-item-2">
+                    <div>
+                        <h3 class="bento-title gradient-text">Data Analyst</h3>
+                        <p class="bento-company">Archi Farming Equipment</p>
+                        <div class="bento-meta">
+                            <i class="fas fa-calendar"></i>
+                            <span>Jan 2023 — Dec 2023</span>
+                        </div>
+                        <div class="bento-meta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Onsite - India</span>
+                        </div>
+                        <ul class="bento-list">
+                            <li>Tableau automation (15hrs/week saved)</li>
+                            <li>85% data accuracy improvement</li>
+                            <li>Inventory forecasting optimization</li>
+                            <li>A/B testing campaigns</li>
+                        </ul>
+                    </div>
+                    <button class="bento-button" onclick="openResponsibilitiesModal('exp2')">
+                        <i class="fas fa-arrow-right"></i> View Full Responsibilities
+                    </button>
+                </div>
+
+                <!-- Large Featured Card - Secondary Experience -->
+                <div class="glass-bento-item glass-bento-item-2">
+                    <div>
+                        <h3 class="bento-title gradient-text">Data Analyst - Intern</h3>
+                        <p class="bento-company">Atmiya Developers</p>
+                        <div class="bento-meta">
+                            <i class="fas fa-calendar"></i>
+                            <span>Oct 2022 — Dec 2022</span>
+                        </div>
+                        <div class="bento-meta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Remote - India</span>
+                        </div>
+                        <ul class="bento-list">
+                            <li>Data cleaning & preprocessing</li>
+                            <li>Sales trend analysis</li>
+                            <li>Interactive dashboards in Power BI</li>
+                            <li>Market research support</li>
+                        </ul>
+                    </div>
+                    <button class="bento-button" onclick="openResponsibilitiesModal('exp3')">
+                        <i class="fas fa-arrow-right"></i> View Full Responsibilities
+                    </button>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <!-- <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Skills & Technologies</h2>
+            <p class="section-subtitle">Tools and technologies I work with</p>
+            
+            <div class="skills-cards-container">
+                <div class="skill-category-card">
+                    <div class="skill-card-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Data & Analytics</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">R</span>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-card-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI Frameworks</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">OpenAI API</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">NLTK</span>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-card-header">
+                        <i class="fas fa-exchange-alt"></i>
+                        <h3>ETL & Data Engineering</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag">Databricks</span>
+                        <span class="skill-tag">Azure Data Factory</span>
+                        <span class="skill-tag">Snowflake</span>
+                        <span class="skill-tag">dbt</span>
+                        <span class="skill-tag">Pantaho</span>
+                        <span class="skill-tag">ETL Pipelines</span>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-card-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Databases & Cloud</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Google Cloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Technical Expertise Section -->
+    <section id="skills" class="section technical-expertise-section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Technical Expertise</h2>
+            <p class="section-subtitle">Tools, Technologies & Skills</p>
+            
+            <!-- Tech Stack Showcase -->
+            <div class="tech-stack-showcase">
+                <div class="tech-stack-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #306998, #FFD43B);">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <span>Python</span>
+                </div>
+                <div class="tech-stack-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #CC2927, #F29111);">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <span>SQL</span>
+                </div>
+                <div class="tech-stack-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #1D6F42, #34A853);">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <span>Excel</span>
+                </div>
+                <div class="tech-stack-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #F2C811, #E8A004);">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <span>Power BI</span>
+                </div>
+                <div class="tech-stack-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #4E79A7, #6BA3D0);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span>Tableau</span>
+                </div>
+                <div class="tech-stack-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #29B5E8, #52C5ED);">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <span>Snowflake</span>
+                </div>
+                <div class="tech-stack-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #0078D4, #50A0E8);">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <span>Azure</span>
+                </div>
+                <div class="tech-stack-item">
+                    <div class="tech-icon" style="background: linear-gradient(135deg, #FF3621, #FF6B4A);">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <span>Databricks</span>
+                </div>
+            </div>
+
+            <!-- Skills Categories -->
+            <div class="skills-mastery-grid">
+                <!-- Data Engineering & Databases -->
+                <div class="skill-mastery-card">
+                    <div class="skill-category-header">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Data Engineering & Databases</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>SQL & Database Design</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Python & Advanced Libraries</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>ETL & Data Pipelines(Databricks)</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Cloud Platforms (Azure, AWS)</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Visualization & Analytics -->
+                <div class="skill-mastery-card">
+                    <div class="skill-category-header">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <h3>Data Visualization & Analytics</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Tableau & Advanced Dashboards</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Power BI & DAX</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Excel & VBA Automation</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Statistical Analysis</span>
+                                <span class="skill-level">87%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 87%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning & AI -->
+                <div class="skill-mastery-card">
+                    <div class="skill-category-header">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Machine Learning & AI</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Scikit-learn & ML Models</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>LangChain & Agentic AI</span>
+                                <span class="skill-level">87%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>NLP & Text Analytics</span>
+                                <span class="skill-level">82%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <!-- <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span>Deep Learning Frameworks</span>
+                                <span class="skill-level">78%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 78%"></div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Education</h2>
+            <p class="section-subtitle">My academic background</p>
+            
+            <div class="education-cards-container">
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="education-degree">Master of Science in Computer Information Systems <b>[ Specialization in Data Science ]</b></h3>
+                    <p class="education-school">University of Houston Clear-Lake</p>
+                    <p class="education-dates"><b>Jan 2024 - Dec 2025 • Houston, TX, USA</b></p>
+                    <p class="education-description">Focused on Data Science, Artificial Intelligence , Software Engineering, Machine learning, EDA, ETL</p>
+                    <ul class="education-highlights">
+                        <li>GPA: 3.75/4.0</li>
+                        <li>Dean's List - All Semesters</li>
+                        <li>Graduate Teaching & Research Assistant</li>
+                    </ul>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="education-degree">Bachelor of Science in Computer Application</h3>
+                    <p class="education-school">NVPAS [ Natubhai V Patel College of Pure And Applied Sciences ]</p>
+                    <p class="education-dates"><b>May 2020 - July 2023 • Anand, GJ, INDIA</b></p>
+                    <p class="education-description">Focused on Java, C, C++ , Data Structure and Algorithms ,SQL ,PLSQL</p>
+                    <ul class="education-highlights">
+                        <li>GPA: 9.98/10.00</li>
+                        <li>Double Gold Medalist (Academic Excellence)</li>
+                        <li>1st Rank in the University for Academic Performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Achievements Section -->
+    <section id="certificates" class="section certifications-section">
+        <div class="container">
+            <h2 class="section-title gradient-text">Certifications & Achievements</h2>
+            <p class="section-subtitle">Academic awards and professional certifications</p>
+            
+            <!-- Achievements Subsection -->
+            <div class="achievements-subsection">
+                <h3 class="subsection-title">
+                    <i class="fas fa-trophy"></i>
+                    Achievements
+                </h3>
+                
+                <div class="certifications-grid">
+
+                    <div class="cert-card academic-award">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">University Rank1 - Gold Medalist</h3>
+                                <p class="cert-issuer">Charutar Vidya Mandal University</p>
+                            </div>
+                        </div>
+                        <div class="cert-badge">Academic Award</div>
+                        <p class="cert-description">Secured 1st Rank in the entire university for exceptional academic performance throughout the program.</p>
+                        
+                        <div class="cert-images">
+                            <img src="assets/certifications/Gold_Medal_1.jpg" alt="Gold Medal Certificate 1" onerror="this.style.display='none'">
+                            <img src="assets/certifications/Gold_Medal_2.jpg" alt="Gold Medal Certificate 2" onerror="this.style.display='none'">
+                            <img src="assets/certifications/Gold_Medal_3.jpg" alt="Gold Medal Certificate 3" onerror="this.style.display='none'">
+                            <img src="assets/certifications/Gold_Medal_4.jpg" alt="Gold Medal Certificate 4" onerror="this.style.display='none'">
+                            <img src="assets/certifications/Gold_Medal_5.jpg" alt="Gold Medal Certificate 5" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+
+                    <div class="cert-card academic-award">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">College Level - Gold Medalist</h3>
+                                <p class="cert-issuer">Natubhai V Patel College-Academic Excellence</p>
+                            </div>
+                        </div>
+                        <div class="cert-badge">Academic Award</div>
+                        <p class="cert-description">Awarded for outstanding academic performance and achieving the highest GPA (9.98/10.00) in the college and the university.</p>
+                        
+                        <div class="cert-images">
+                            <img src="assets/certifications/College_Gold_Medal_1.jpg" alt="College Gold Medal " onerror="this.style.display='none'">
+                            <img src="assets/certifications/College_Gold_Medal_3.jpg" alt="College Gold Medal 2" onerror="this.style.display='none'">
+                            <img src="assets/certifications/College_Gold_Medal_2.jpg" alt="College Gold Medal 3" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="cert-card academic-award">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Dean's List - All Semesters</h3>
+                                <p class="cert-issuer">University of Houston Clear-Lake</p>
+                            </div>
+                        </div>
+                        <div class="cert-badge">Academic Honor</div>
+                        <p class="cert-description">Consistently maintained high academic standards with GPA of 3.75/4.0 across all semesters.</p>
+                        
+                        <div class="cert-images">
+                            <img src="assets/certifications/UHCL1.jpeg" alt="Dean's List Certificate 1" onerror="this.style.display='none'">
+                            <img src="assets/certifications/UHCL2.jpg" alt="Dean's List Certificate 2" onerror="this.style.display='none'">
+                            <img src="assets/certifications/UHCL3.jpg" alt="Dean's List Certificate 3" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certificates Subsection -->
+            <div class="certificates-subsection">
+                <h3 class="subsection-title">
+                    <i class="fas fa-certificate"></i>
+                    Professional Certifications
+                </h3>
+                
+                <div class="certifications-grid">
+                    <div class="cert-card professional-cert">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Agentic AI with LangChain and LangGraph</h3>
+                                <p class="cert-issuer">Udemy - KRISHAI Technologies</p>
+                            </div>
+                            <a href="#" class="cert-link-icon" target="_blank" title="View Certificate">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-badge">In Progress</div>
+                        <p class="cert-description">Professional certification demonstrating expertise in designing and implementing Agentic AI systems using LangChain and LangGraph frameworks.</p>
+                        <div class="cert-images">
+                            <img src="assets/certifications/agentic-ai-langchain-langgraph.jpg" alt="Agentic AI with LangChain and LangGraph Certificate" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+
+                    <div class="cert-card course-completion">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Advanced SQL</h3>
+                                <p class="cert-issuer">HackerRank</p>
+                            </div>
+                            <a href="https://www.hackerrank.com/" class="cert-link-icon" target="_blank" title="View Certificate">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-badge">In Progress</div>
+                        <p class="cert-description">Comprehensive test problmes covering Advance SQL for data science and business intelligence concepts.</p>
+                        
+                        <div class="cert-images">
+                            <img src="assets/certifications/ml-coursera-1.jpg" alt="ML Certificate 1" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+
+                    <div class="cert-card course-completion">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Intermediate SQL</h3>
+                                <p class="cert-issuer">HackerRank</p>
+                            </div>
+                            <a href="https://www.hackerrank.com/certificates/iframe/79b9d96476cd" class="cert-link-icon" target="_blank" title="View Certificate">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-badge">Course Completion</div>
+                        <p class="cert-description">Intermediate level SQL skills demonstrated through comprehensive problem-solving on HackerRank.</p>
+                        
+                        <div class="cert-images">
+                            <img src="assets/certifications/Intermidiate_SQL.png" alt="HackerRank Certificate" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                    <div class="cert-card course-completion">
+                        <div class="cert-header">
+                            <div class="cert-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="cert-info">
+                                <h3 class="cert-title">Basic SQL</h3>
+                                <p class="cert-issuer">HackerRank</p>
+                            </div>
+                            <a href="https://www.hackerrank.com/certificates/iframe/5808f2b95f1f" class="cert-link-icon" target="_blank" title="View Certificate">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="cert-badge">Course Completion</div>
+                        <p class="cert-description">Basic level SQL skills demonstrated through comprehensive problem-solving on HackerRank.</p>
+                        
+                        <div class="cert-images">
+                            <img src="assets/certifications/Basic_SQL.png" alt="DataCamp Certificate" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cert-show-more-container">
+                    <button id="showMoreCerts" class="btn btn-outline show-more-btn">
+                        <span class="show-text">Show More Certificates</span>
+                        <span class="hide-text" style="display: none;">Show Less</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="glass-background">
+            <div class="glass-blob glass-blob-1"></div>
+            <div class="glass-blob glass-blob-2"></div>
+            <div class="glass-blob glass-blob-3"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title gradient-text" style="position: relative; z-index: 1;">Featured Projects</h2>
+            <p class="section-subtitle" style="position: relative; z-index: 1;">Showcasing innovation through data science, AI, and engineering</p>
+            
+            <!-- Project Tabs -->
+            <div class="project-tabs">
+                <button class="project-tab active" data-category="DEA">Data Engineering & Analytics</button>
+                <button class="project-tab" data-category="AI">Artificial Intelligence</button>
+            </div>
+
+            <!-- Projects Bento Grid -->
+            <div class="projects-bento-grid">
+                <!-- AI Project Card -->
+                <div class="project-bento-card project-bento-medium" data-category="AI">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <span class="project-category-badge ai">AI & GenAI</span>
+                    </div>
+                    <h3 class="project-card-title">Agentic AI Stock Recommendation System</h3>
+                    <p class="project-card-description">
+                        Built an intelligent AI agent framework that autonomously researches market data and delivers actionable stock investment recommendations, with specialized focus on covered call strategies and risk management.
+                    </p>
+                    <div class="project-tech-stack">
+                        <span>Python</span>
+                        <span>LangChain</span>
+                        <span>LangGraph</span>
+                        <span>FastAPI</span>
+                        <span>+3</span>
+                    </div>
+                    <a href="https://teamnexuscapstoneportfolio.netlify.app/" target="_blank" class="project-card-link">
+                        <i class="fab fa-github"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <!-- DEA Project Card -->
+                <div class="project-bento-card project-bento-medium" data-category="DEA">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <span class="project-category-badge viz">Data Engineering - In Progress</span>
+                    </div>
+                    <h3 class="project-card-title">End-to-End Data Engineering Pipeline</h3>
+                    <p class="project-card-description">
+                        Biulilding a robust data engineering pipeline using Databricks, Snowflake, and PostgreSQL to streamline data ingestion, transformation, and storage for scalable analytics solutions.
+                    </p>
+                    <div class="project-tech-stack">
+                        <span>Databricks</span>
+                        <span>SQL</span>
+                        <span>Python</span>
+                        <span>PostgreSQL</span>
+                        <span>Snowflake</span>
+                    </div>
+                    <a href="github.com/" target="_blank" class="project-card-link">
+                        <i class="fab fa-github"></i>
+                        View Project
+                    </a>
+                </div>
+                <div class="project-bento-card project-bento-medium" data-category="DEA">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <span class="project-category-badge viz">Data Visualization</span>
+                    </div>
+                    <h3 class="project-card-title">US-County Level COVID-19 Analytics </h3>
+                    <p class="project-card-description">
+                        Analyzing pandemic trends across all counties in the US with 3.5M+ data points,a detailed Python-based analysis of COVID-19 vaccination trends across counties in the United States. This project investigates how demographic, socioeconomic, and geographic factors influence vaccination rates, aiming to support data-driven public health strategies.
+                    <div class="project-tech-stack">
+                        <span>Tableau</span>
+                        <span>SQL</span>
+                        <span>Python  ( Pandas , Matplotlib , Seaborn )</span>
+                    </div>
+                    <a href="https://github.com/meetpatel3690/USCovid19_Vaccine_Analysis_CountyLevel" target="_blank" class="project-card-link">
+                        <i class="fab fa-github"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <!-- AI Project Card -->
+                <div class="project-bento-card project-bento-medium" data-category="AI">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <span class="project-category-badge ml">Machine Learning</span>
+                    </div>
+                    <h3 class="project-card-title">California Housing Price Prediction</h3>
+                    <p class="project-card-description">
+                        Custom linear regression model using Gradient Descent achieving R² of 0.606, matching scikit-learn's performance.
+                    </p>
+                    <div class="project-tech-stack">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                    </div>
+                    <a href="https://github.com/meetpatel3690/Housing-Price-Prediction-Using_LinearRegression" target="_blank" class="project-card-link">
+                        <i class="fab fa-github"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <!-- AI Project Card -->
+                <div class="project-bento-card project-bento-medium" data-category="AI">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <span class="project-category-badge ml">Machine Learning</span>
+                    </div>
+                    <h3 class="project-card-title">Customer Churn Prediction Model</h3>
+                    <p class="project-card-description">
+                        ML solution analyzing customer behavior patterns to predict churn with 85% accuracy using Random Forest.
+                    </p>
+                    <div class="project-tech-stack">
+                        <span>Python</span>
+                        <span>Scikit-learn</span>
+                        <span>+2</span>
+                    </div>
+                    <a href="#" target="_blank" class="project-card-link">
+                        <i class="fab fa-github"></i>
+                        View Project
+                    </a>
+                </div>
+
+                <!-- DEA Project Card -->
+                <div class="project-bento-card project-bento-medium" data-category="DEA">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <span class="project-category-badge arch">Data Visualization</span>
+                    </div>
+                    <h3 class="project-card-title">Amazon Sales Analaytics</h3>
+                    <p class="project-card-description">
+                        Built an end-to-end Amazon Sales Analysis dashboard using Power BI to convert raw sales data into actionable insights. The project includes data cleaning, data modeling, and DAX calculations for key KPIs like sales, profit, and quantity sold. Interactive visuals highlight sales trends, category performance, supporting data-driven decision-making.
+                    </p>
+                    <div class="project-tech-stack">
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>Tableau</span>
+                        <span>Time-Series Analysis</span>
+                        <span>+1</span>
+                    </div>
+                    <a href="https://github.com/meetpatel3690/Amazon-Sales-Analysis" target="_blank" class="project-card-link">
+                        <i class="fab fa-github"></i>
+                        View Project
+                    </a>
+                </div>
+                
+
+                <!-- DEA Project Card -->
+                <div class="project-bento-card project-bento-medium" data-category="DEA">
+                    <div class="project-card-header">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <span class="project-category-badge viz">Data Visualization</span>
+                    </div>
+                    <h3 class="project-card-title">Retail Customer Behavior & Shopping Trends Analysis </h3>
+                    <p class="project-card-description">
+                        A comprehensive data analysis project that explores customer shopping behavior patterns using Python and SQL. This project analyzes customer demographics, purchasing patterns, product preferences, and subscription behaviors to derive actionable business insights.
+                    </p>
+                    <div class="project-tech-stack">
+                        <span>Power BI</span>
+                        <span>DAX</span>
+                        <span>SQL</span>
+                        <span>Excel</span>
+                    </div>
+                    <a href="https://github.com/meetpatel3690/Customer_Behavior_Analysis" target="_blank" class="project-card-link">
+                        <i class="fab fa-github"></i>
+                        View Project
+                    </a>
+                </div>
+                <!-- DEA Project Card -->
+                
+
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Responsibilities Modal -->
+    <div id="responsibilitiesModal" class="modal">
+        <div class="modal-overlay" onclick="closeResponsibilitiesModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeResponsibilitiesModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalBody">
+                <!-- Content will be dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Updates Section -->
+    <section class="updates-section">
+        <div class="container">
+            <div class="updates-card">
+                <div class="updates-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="updates-title">Always Evolving</h3>
+                <p class="updates-text">This portfolio is regularly updated with new projects, skills, and achievements. Stay tuned for cool and exciting projects coming soon!</p>
+                <div class="updates-badge">
+                    <i class="fas fa-circle pulse"></i>
+                    <span>Active Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="section-title gradient-text">Get In Touch</h2>
+                <p class="section-subtitle">Ready to turn ideas into reality? Let's start a conversation</p>
+            </div>
+
+            
+
+            <!-- Main Contact Form -->
+            <div class="contact-main-wrapper">
+                <div class="contact-form-box">
+                    <div class="form-header-section">
+                        <div class="form-icon-badge">
+                            <i class="fas fa-paper-plane"></i>
+                        </div>
+                        <h3 class="form-main-title">Send Me a Message</h3>
+                        <p class="form-description">Fill out the form below and I'll get back to you as soon as possible</p>
+                    </div>
+
+                    <form id="contactForm" class="modern-contact-form">
+                        <div class="input-grid">
+                            <div class="input-wrapper">
+                                <label for="name" class="input-label">Your Name</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="name" name="name" required placeholder="John Doe" class="styled-input">
+                                </div>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <label for="email" class="input-label">Email Address</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="email" name="email" required placeholder="john@example.com" class="styled-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="subject" class="input-label">Subject</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-tag"></i>
+                                <input type="text" id="subject" name="subject" required placeholder="What's this about?" class="styled-input">
+                            </div>
+                        </div>
+
+                        <div class="input-wrapper">
+                            <label for="message" class="input-label">Your Message</label>
+                            <div class="input-with-icon textarea-wrapper">
+                                <i class="fas fa-comment-dots"></i>
+                                <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project or idea..." class="styled-input styled-textarea"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Social Links & Info -->
+                <div class="contact-extra-info">
+                    <div class="info-box">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Let's Collaborate</h4>
+                        <p>I'm open to full-time opportunities, freelance projects, and exciting collaborations</p>
+                    </div>
+
+                    <div class="info-box">
+                        <i class="fas fa-clock"></i>
+                        <h4>Quick Response</h4>
+                        <p>I typically respond within 24 hours during business days</p>
+                    </div>
+                    <!-- Quick Contact Icons -->
+                    <div class="quick-contact-wrapper">
+                        <a href="mailto:meetpatel3690@gmail.com" class="quick-contact-icon" title="Email Me">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/meetpatel3690" target="_blank" class="quick-contact-icon" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/meet-patel-a090b41a3/" target="_blank" class="quick-contact-icon" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                Made with <i class="fas fa-heart"></i> by <span id="footerName">Meet Patel</span>
+                <span class="separator">•</span>©<span id="currentYear"></span> All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

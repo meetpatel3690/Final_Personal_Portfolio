@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Section Demos - Choose Your Style</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #E91E63;
+            --accent: #FF4081;
+            --background: oklch(0.12 0.02 285);
+            --foreground: oklch(0.98 0 0);
+            --card: oklch(0.20 0.03 285);
+            --border: oklch(0.35 0.06 285);
+            --muted: oklch(0.65 0.01 285);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--background);
+            color: var(--foreground);
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #E91E63 0%, #FF4081 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Demo Navigation */
+        .demo-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .demo-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-header p {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+
+        .demo-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--card);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .demo-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--card);
+            border: 2px solid var(--border);
+            color: var(--foreground);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .demo-btn:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .demo-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .demo-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .demo-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Common Styles */
+        .exp-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+        }
+
+        /* DEMO 1: Interactive Cards Grid */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flip-card {
+            perspective: 1000px;
+            height: 300px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            padding: 2rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, rgba(233, 30, 99, 0.1), rgba(255, 64, 129, 0.1));
+            overflow-y: auto;
+        }
+
+        /* DEMO 2: Horizontal Scroll Carousel */
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 2rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--card);
+        }
+
+        .carousel-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .carousel-wrapper::-webkit-scrollbar-track {
+            background: var(--card);
+            border-radius: 10px;
+        }
+
+        .carousel-wrapper::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 10px;
+        }
+
+        .carousel-card {
+            min-width: 400px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        /* DEMO 3: Tabbed Interface */
+        .tabs-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tabs-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* DEMO 4: Expandable Accordion */
+        .accordion-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(233, 30, 99, 0.1);
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+        }
+
+        .accordion-body {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        /* DEMO 5: Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .bento-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .bento-item:hover {
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .bento-item-1 { grid-column: span 2; grid-row: span 2; }
+        .bento-item-2 { grid-column: span 2; grid-row: span 1; }
+        .bento-item-3 { grid-column: span 2; grid-row: span 1; }
+
+        /* DEMO 6: Interactive Company Logos */
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+        }
+
+        .logo-item {
+            aspect-ratio: 1;
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .logo-item.active {
+            border-color: var(--primary);
+            background: rgba(233, 30, 99, 0.1);
+        }
+
+        .logo-details {
+            display: none;
+            max-width: 800px;
+            margin: 2rem auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .logo-details.active {
+            display: block;
+        }
+
+        /* DEMO 7: List with Side Panel */
+        .split-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .list-panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1rem;
+            height: fit-content;
+        }
+
+        .list-item {
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .list-item:hover {
+            background: rgba(233, 30, 99, 0.1);
+        }
+
+        .list-item.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+        }
+
+        .detail-panel {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            min-height: 400px;
+        }
+
+        .detail-content {
+            display: none;
+        }
+
+        .detail-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* DEMO 8: Glassmorphism Cards */
+        #demo8 {
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+
+        .glass-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .glass-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .glass-blob-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #E91E63, #FF4081);
+            top: -100px;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .glass-blob-2 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #9C27B0, #E91E63);
+            bottom: -80px;
+            left: 5%;
+            animation-delay: -7s;
+        }
+
+        .glass-blob-3 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #FF4081, #9C27B0);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -14s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 30px) scale(0.9);
+            }
+        }
+
+        .glass-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(233, 30, 99, 0.4);
+            border-color: rgba(233, 30, 99, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* DEMO 9: Comparison Table */
+        .table-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .exp-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--card);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .exp-table th {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .exp-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .exp-table tr:hover {
+            background: rgba(233, 30, 99, 0.1);
+        }
+
+        /* DEMO 10: Story Format */
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .story-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: -3rem;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+        }
+
+        .story-item:last-child::before {
+            display: none;
+        }
+
+        .story-dot {
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            background: var(--primary);
+            border: 3px solid var(--background);
+            border-radius: 50%;
+        }
+
+        .story-content {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        /* DEMO 11: Glassmorphism + Bento Grid Mix */
+        #demo11 {
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+
+        .glass-bento-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-auto-rows: 180px;
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .glass-bento-item {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .glass-bento-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        .glass-bento-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(233, 30, 99, 0.4);
+            border-color: rgba(233, 30, 99, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Bento Grid Layout Items */
+        .glass-bento-item-1 { 
+            grid-column: span 3; 
+            grid-row: span 2; 
+        }
+        
+        .glass-bento-item-2 { 
+            grid-column: span 3; 
+            grid-row: span 2; 
+        }
+        
+        .glass-bento-item-3 { 
+            grid-column: span 2; 
+            grid-row: span 1; 
+        }
+        
+        .glass-bento-item-4 { 
+            grid-column: span 2; 
+            grid-row: span 1; 
+        }
+        
+        .glass-bento-item-5 { 
+            grid-column: span 2; 
+            grid-row: span 1; 
+        }
+
+        .bento-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .bento-company {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .bento-meta {
+            font-size: 0.85rem;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .bento-meta i {
+            color: var(--primary);
+        }
+
+        .bento-highlight {
+            background: rgba(233, 30, 99, 0.1);
+            border: 1px solid rgba(233, 30, 99, 0.3);
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            margin-top: auto;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Responsive for Glass Bento */
+        @media (max-width: 768px) {
+            .glass-bento-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+            }
+            
+            .glass-bento-item-1, 
+            .glass-bento-item-2,
+            .glass-bento-item-3,
+            .glass-bento-item-4,
+            .glass-bento-item-5 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+            }
+            
+            .bento-item-1, .bento-item-2, .bento-item-3 {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .split-container {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-nav {
+                padding: 1rem;
+            }
+
+            .demo-btn {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-header">
+        <h1 class="gradient-text">Work Experience Layout Demos</h1>
+        <p>Browse through 10 different styles and choose your favorite!</p>
+    </div>
+
+    <div class="demo-nav">
+        <button class="demo-btn active" onclick="showDemo(1)">1. Cards Grid</button>
+        <button class="demo-btn" onclick="showDemo(2)">2. Carousel</button>
+        <button class="demo-btn" onclick="showDemo(3)">3. Tabs</button>
+        <button class="demo-btn" onclick="showDemo(4)">4. Accordion</button>
+        <button class="demo-btn" onclick="showDemo(5)">5. Bento Grid</button>
+        <button class="demo-btn" onclick="showDemo(6)">6. Logos</button>
+        <button class="demo-btn" onclick="showDemo(7)">7. List Panel</button>
+        <button class="demo-btn" onclick="showDemo(8)">8. Glassmorphism</button>
+        <button class="demo-btn" onclick="showDemo(9)">9. Table</button>
+        <button class="demo-btn" onclick="showDemo(10)">10. Story</button>
+        <button class="demo-btn" onclick="showDemo(11)" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border-color: var(--primary);">11. Glass Bento ⭐</button>
+    </div>
+
+    <!-- DEMO 1: Interactive Cards Grid with Flip -->
+    <div id="demo1" class="demo-section active">
+        <h2 class="section-title gradient-text">Interactive Flip Cards Grid</h2>
+        <div class="grid-layout">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3 class="gradient-text">Graduate Teaching & Research Assistant</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin: 1rem 0;">University of Houston Clear-Lake</p>
+                        <p style="color: var(--muted);"><i class="fas fa-calendar"></i> Jan 2024 — Present</p>
+                        <p style="color: var(--muted); margin-top: 0.5rem;"><i class="fas fa-map-marker-alt"></i> Houston, TX</p>
+                        <p style="margin-top: 2rem; color: var(--muted); font-style: italic;">Hover to see responsibilities</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4 style="color: var(--primary); margin-bottom: 1rem;">Key Responsibilities</h4>
+                        <ul style="font-size: 0.9rem;">
+                            <li>Teaching data analytics courses</li>
+                            <li>Conducting AI research</li>
+                            <li>Developing educational materials</li>
+                            <li>Mentoring students</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3 class="gradient-text">Data Analyst</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin: 1rem 0;">Archi Farming Equipment</p>
+                        <p style="color: var(--muted);"><i class="fas fa-calendar"></i> Jan 2024 — Aug 2024</p>
+                        <p style="color: var(--muted); margin-top: 0.5rem;"><i class="fas fa-map-marker-alt"></i> India</p>
+                        <p style="margin-top: 2rem; color: var(--muted); font-style: italic;">Hover to see responsibilities</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h4 style="color: var(--primary); margin-bottom: 1rem;">Key Responsibilities</h4>
+                        <ul style="font-size: 0.85rem;">
+                            <li>Automated sales reports in Tableau</li>
+                            <li>Improved data accuracy by 85%</li>
+                            <li>Optimized inventory forecasting</li>
+                            <li>A/B testing campaigns</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO 2: Horizontal Scroll Carousel -->
+    <div id="demo2" class="demo-section">
+        <h2 class="section-title gradient-text">Horizontal Scroll Carousel</h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 2rem;">Swipe or scroll horizontally →</p>
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-card">
+                    <h3 class="gradient-text">Graduate Teaching & Research Assistant</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin: 1rem 0;">University of Houston Clear-Lake</p>
+                    <p style="color: var(--muted);"><i class="fas fa-calendar"></i> Jan 2024 — Present</p>
+                    <p style="color: var(--muted); margin-top: 0.5rem;"><i class="fas fa-map-marker-alt"></i> Houston, TX</p>
+                    <ul style="margin-top: 1.5rem; font-size: 0.9rem;">
+                        <li>Teaching data analytics</li>
+                        <li>AI research</li>
+                        <li>Student mentoring</li>
+                    </ul>
+                </div>
+
+                <div class="carousel-card">
+                    <h3 class="gradient-text">Data Analyst</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin: 1rem 0;">Archi Farming Equipment</p>
+                    <p style="color: var(--muted);"><i class="fas fa-calendar"></i> Jan 2024 — Aug 2024</p>
+                    <p style="color: var(--muted); margin-top: 0.5rem;"><i class="fas fa-map-marker-alt"></i> India</p>
+                    <ul style="margin-top: 1.5rem; font-size: 0.9rem;">
+                        <li>Tableau automation</li>
+                        <li>Data accuracy +85%</li>
+                        <li>Inventory optimization</li>
+                    </ul>
+                </div>
+
+                <div class="carousel-card">
+                    <h3 class="gradient-text">Add More Experiences</h3>
+                    <p style="color: var(--muted); margin-top: 1rem;">This layout is perfect for showcasing multiple roles</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO 3: Tabbed Interface -->
+    <div id="demo3" class="demo-section">
+        <h2 class="section-title gradient-text">Tabbed Interface</h2>
+        <div class="tabs-container">
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="showTab(1)">University of Houston</button>
+                <button class="tab-btn" onclick="showTab(2)">Archi Farming</button>
+            </div>
+            
+            <div id="tab1" class="tab-content active">
+                <div class="exp-card">
+                    <h3 class="gradient-text" style="font-size: 1.8rem;">Graduate Teaching & Research Assistant</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin: 1rem 0; font-size: 1.2rem;">University of Houston Clear-Lake</p>
+                    <div style="display: flex; gap: 2rem; margin: 1rem 0; color: var(--muted);">
+                        <p><i class="fas fa-calendar"></i> Jan 2024 — Present</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Houston, TX</p>
+                    </div>
+                    <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Responsibilities:</h4>
+                    <ul>
+                        <li>Assisted in teaching data analytics and machine learning courses</li>
+                        <li>Conducted research on AI applications in financial markets</li>
+                        <li>Developed educational materials and lab exercises</li>
+                        <li>Mentored undergraduate students</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="tab2" class="tab-content">
+                <div class="exp-card">
+                    <h3 class="gradient-text" style="font-size: 1.8rem;">Data Analyst</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin: 1rem 0; font-size: 1.2rem;">Archi Farming Equipment</p>
+                    <div style="display: flex; gap: 2rem; margin: 1rem 0; color: var(--muted);">
+                        <p><i class="fas fa-calendar"></i> Jan 2024 — Aug 2024</p>
+                        <p><i class="fas fa-map-marker-alt"></i> India</p>
+                    </div>
+                    <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Responsibilities:</h4>
+                    <ul>
+                        <li>Automated sales and expense reports in Tableau</li>
+                        <li>Improved data accuracy by 85%</li>
+                        <li>Optimized inventory forecasting</li>
+                        <li>Designed Tableau dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO 4: Expandable Accordion -->
+    <div id="demo4" class="demo-section">
+        <h2 class="section-title gradient-text">Expandable Accordion</h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 2rem;">Click to expand/collapse</p>
+        <div class="accordion-container">
+            <div class="accordion-item active">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div>
+                        <h3 style="font-size: 1.3rem;">Graduate Teaching & Research Assistant</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-top: 0.5rem;">University of Houston Clear-Lake</p>
+                        <p style="color: var(--muted); margin-top: 0.25rem; font-size: 0.9rem;">Jan 2024 — Present</p>
+                    </div>
+                    <i class="fas fa-chevron-down accordion-icon" style="color: var(--primary); font-size: 1.5rem;"></i>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <h4 style="margin-bottom: 1rem;">Key Responsibilities:</h4>
+                        <ul>
+                            <li>Teaching data analytics and machine learning courses</li>
+                            <li>Conducting AI research in financial markets</li>
+                            <li>Developing educational materials</li>
+                            <li>Mentoring undergraduate students</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div>
+                        <h3 style="font-size: 1.3rem;">Data Analyst</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-top: 0.5rem;">Archi Farming Equipment</p>
+                        <p style="color: var(--muted); margin-top: 0.25rem; font-size: 0.9rem;">Jan 2024 — Aug 2024</p>
+                    </div>
+                    <i class="fas fa-chevron-down accordion-icon" style="color: var(--primary); font-size: 1.5rem;"></i>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-body">
+                        <h4 style="margin-bottom: 1rem;">Key Achievements:</h4>
+                        <ul>
+                            <li>Automated sales reports, saving 15 hours/week</li>
+                            <li>Improved data accuracy by 85%</li>
+                            <li>Reduced stock shortages by 10%</li>
+                            <li>Improved planning accuracy by 25%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO 5: Bento Grid -->
+    <div id="demo5" class="demo-section">
+        <h2 class="section-title gradient-text">Bento Grid (Trendy!)</h2>
+        <div class="bento-grid">
+            <div class="bento-item bento-item-1">
+                <h3 class="gradient-text" style="font-size: 1.5rem;">Graduate Teaching & Research Assistant</h3>
+                <p style="color: var(--primary); font-weight: 600; margin: 1rem 0;">University of Houston Clear-Lake</p>
+                <p style="color: var(--muted); font-size: 0.9rem;">Jan 2024 — Present</p>
+                <ul style="margin-top: 1rem; font-size: 0.9rem;">
+                    <li>Teaching & research</li>
+                    <li>AI applications</li>
+                    <li>Student mentoring</li>
+                </ul>
+            </div>
+            <div class="bento-item bento-item-2">
+                <h3 class="gradient-text">Data Analyst</h3>
+                <p style="color: var(--primary); font-weight: 600; margin: 0.5rem 0;">Archi Farming</p>
+                <p style="color: var(--muted); font-size: 0.85rem;">Jan 2024 — Aug 2024</p>
+            </div>
+            <div class="bento-item bento-item-3" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <i class="fas fa-briefcase" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <p style="color: var(--muted);">More experiences</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO 6: Interactive Company Logos -->
+    <div id="demo6" class="demo-section">
+        <h2 class="section-title gradient-text">Interactive Company Logos</h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 2rem;">Click on a company to see details</p>
+        <div class="logos-grid">
+            <div class="logo-item active" onclick="showLogoDetails(1)">
+                <i class="fas fa-university" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h4>UHCL</h4>
+            </div>
+            <div class="logo-item" onclick="showLogoDetails(2)">
+                <i class="fas fa-tractor" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h4>Archi Farming</h4>
+            </div>
+        </div>
+
+        <div id="logo-detail-1" class="logo-details active">
+            <div class="exp-card">
+                <h3 class="gradient-text" style="font-size: 1.8rem;">Graduate Teaching & Research Assistant</h3>
+                <p style="color: var(--primary); font-weight: 600; margin: 1rem 0;">University of Houston Clear-Lake</p>
+                <ul style="margin-top: 1.5rem;">
+                    <li>Teaching data analytics courses</li>
+                    <li>AI research in financial markets</li>
+                    <li>Educational material development</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="logo-detail-2" class="logo-details">
+            <div class="exp-card">
+                <h3 class="gradient-text" style="font-size: 1.8rem;">Data Analyst</h3>
+                <p style="color: var(--primary); font-weight: 600; margin: 1rem 0;">Archi Farming Equipment</p>
+                <ul style="margin-top: 1.5rem;">
+                    <li>Tableau automation and reporting</li>
+                    <li>Data accuracy improvements (85%)</li>
+                    <li>Inventory optimization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO 7: List with Side Panel -->
+    <div id="demo7" class="demo-section">
+        <h2 class="section-title gradient-text">Minimalist List with Side Panel</h2>
+        <div class="split-container">
+            <div class="list-panel">
+                <div class="list-item active" onclick="showDetail(1)">
+                    <h4>UHCL</h4>
+                    <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem;">2024 - Present</p>
+                </div>
+                <div class="list-item" onclick="showDetail(2)">
+                    <h4>Archi Farming</h4>
+                    <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem;">2024</p>
+                </div>
+            </div>
+
+            <div class="detail-panel">
+                <div id="detail-1" class="detail-content active">
+                    <h3 class="gradient-text" style="font-size: 2rem;">Graduate Teaching & Research Assistant</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin: 1rem 0; font-size: 1.2rem;">University of Houston Clear-Lake</p>
+                    <div style="display: flex; gap: 2rem; margin: 1rem 0; color: var(--muted);">
+                        <p><i class="fas fa-calendar"></i> Jan 2024 — Present</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Houston, TX</p>
+                    </div>
+                    <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Key Responsibilities:</h4>
+                    <ul>
+                        <li>Teaching data analytics and ML courses</li>
+                        <li>Conducting AI research</li>
+                        <li>Developing educational materials</li>
+                        <li>Mentoring students</li>
+                    </ul>
+                </div>
+
+                <div id="detail-2" class="detail-content">
+                    <h3 class="gradient-text" style="font-size: 2rem;">Data Analyst</h3>
+                    <p style="color: var(--primary); font-weight: 600; margin: 1rem 0; font-size: 1.2rem;">Archi Farming Equipment</p>
+                    <div style="display: flex; gap: 2rem; margin: 1rem 0; color: var(--muted);">
+                        <p><i class="fas fa-calendar"></i> Jan 2024 — Aug 2024</p>
+                        <p><i class="fas fa-map-marker-alt"></i> India</p>
+                    </div>
+                    <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Key Achievements:</h4>
+                    <ul>
+                        <li>Automated Tableau reports (15hrs/week saved)</li>
+                        <li>85% improvement in data accuracy</li>
+                        <li>10% reduction in stock shortages</li>
+                        <li>25% better planning accuracy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO 8: Glassmorphism Cards -->
+    <div id="demo8" class="demo-section">
+        <div class="glass-background">
+            <div class="glass-blob glass-blob-1"></div>
+            <div class="glass-blob glass-blob-2"></div>
+            <div class="glass-blob glass-blob-3"></div>
+        </div>
+        
+        <h2 class="section-title gradient-text" style="position: relative; z-index: 1;">Glassmorphism Cards (Premium)</h2>
+        <div class="glass-grid">
+            <div class="glass-card">
+                <h3 class="gradient-text" style="font-size: 1.5rem;">Graduate Teaching & Research Assistant</h3>
+                <p style="color: var(--primary); font-weight: 600; margin: 1rem 0;">University of Houston Clear-Lake</p>
+                <p style="color: var(--muted);"><i class="fas fa-calendar"></i> Jan 2024 — Present</p>
+                <p style="color: var(--muted); margin-top: 0.5rem;"><i class="fas fa-map-marker-alt"></i> Houston, TX</p>
+                <ul style="margin-top: 1.5rem; font-size: 0.9rem;">
+                    <li>Teaching data analytics</li>
+                    <li>AI research</li>
+                    <li>Student mentoring</li>
+                </ul>
+            </div>
+
+            <div class="glass-card">
+                <h3 class="gradient-text" style="font-size: 1.5rem;">Data Analyst</h3>
+                <p style="color: var(--primary); font-weight: 600; margin: 1rem 0;">Archi Farming Equipment</p>
+                <p style="color: var(--muted);"><i class="fas fa-calendar"></i> Jan 2024 — Aug 2024</p>
+                <p style="color: var(--muted); margin-top: 0.5rem;"><i class="fas fa-map-marker-alt"></i> India</p>
+                <ul style="margin-top: 1.5rem; font-size: 0.9rem;">
+                    <li>Tableau automation</li>
+                    <li>Data accuracy +85%</li>
+                    <li>Inventory optimization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO 9: Comparison Table -->
+    <div id="demo9" class="demo-section">
+        <h2 class="section-title gradient-text">Comparison Table</h2>
+        <div class="table-container">
+            <table class="exp-table">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Company</th>
+                        <th>Duration</th>
+                        <th>Location</th>
+                        <th>Key Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Graduate TA & Researcher</strong></td>
+                        <td>University of Houston Clear-Lake</td>
+                        <td>Jan 2024 — Present</td>
+                        <td>Houston, TX</td>
+                        <td>Teaching, AI, Research</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Analyst</strong></td>
+                        <td>Archi Farming Equipment</td>
+                        <td>Jan 2024 — Aug 2024</td>
+                        <td>India</td>
+                        <td>Tableau, SQL, Python</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- DEMO 10: Story Format -->
+    <div id="demo10" class="demo-section">
+        <h2 class="section-title gradient-text">Story/Narrative Format</h2>
+        <div class="story-container">
+            <div class="story-item">
+                <div class="story-dot"></div>
+                <div class="story-content">
+                    <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem;">JANUARY 2024 — PRESENT</p>
+                    <h3 class="gradient-text" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Graduate Teaching & Research Assistant</h3>
+                    <p style="color: var(--primary); font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem;">University of Houston Clear-Lake · Houston, TX</p>
+                    <p style="line-height: 1.8; color: var(--foreground);">
+                        Currently supporting academic research and teaching in Computer Information Systems, with a focus on data science and AI applications. 
+                        My work involves teaching data analytics courses, conducting research on AI in financial markets, and mentoring students in their 
+                        data science journey. This role has strengthened my ability to communicate complex technical concepts and work on cutting-edge AI research.
+                    </p>
+                    <ul style="margin-top: 1rem;">
+                        <li>Teaching data analytics to graduate students</li>
+                        <li>AI research in financial markets</li>
+                        <li>Educational material development</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="story-item">
+                <div class="story-dot"></div>
+                <div class="story-content">
+                    <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem;">JANUARY 2024 — AUGUST 2024</p>
+                    <h3 class="gradient-text" style="font-size: 1.8rem; margin-bottom: 0.5rem;">Data Analyst</h3>
+                    <p style="color: var(--primary); font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem;">Archi Farming Equipment · India</p>
+                    <p style="line-height: 1.8; color: var(--foreground);">
+                        Transformed data operations at Archi Farming Equipment by automating reporting processes and improving data quality. 
+                        Implemented Tableau dashboards that saved 15 hours per week and increased data accuracy by 85%. My work in inventory 
+                        optimization led to a 10% reduction in stock shortages, directly impacting the bottom line.
+                    </p>
+                    <ul style="margin-top: 1rem;">
+                        <li>Automated Tableau reporting (15hrs/week saved)</li>
+                        <li>85% improvement in data accuracy</li>
+                        <li>Inventory forecasting optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DEMO 11: Glassmorphism + Bento Grid Mix -->
+    <div id="demo11" class="demo-section">
+        <div class="glass-background">
+            <div class="glass-blob glass-blob-1"></div>
+            <div class="glass-blob glass-blob-2"></div>
+            <div class="glass-blob glass-blob-3"></div>
+        </div>
+        
+        <h2 class="section-title gradient-text" style="position: relative; z-index: 1;">Glassmorphism + Bento Grid ⭐ (Ultimate Premium)</h2>
+        <p style="text-align: center; color: var(--muted); margin-bottom: 3rem; position: relative; z-index: 1;">The best of both worlds - asymmetric layout with frosted glass effect</p>
+        
+        <div class="glass-bento-grid">
+            <!-- Large Featured Card - Main Experience -->
+            <div class="glass-bento-item glass-bento-item-1">
+                <div>
+                    <h3 class="bento-title gradient-text">Graduate Teaching & Research Assistant</h3>
+                    <p class="bento-company" style="color: var(--primary);">University of Houston Clear-Lake</p>
+                    <div class="bento-meta">
+                        <i class="fas fa-calendar"></i>
+                        <span>Jan 2024 — Present</span>
+                    </div>
+                    <div class="bento-meta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Houston, TX, USA</span>
+                    </div>
+                    <ul style="margin-top: 1rem; font-size: 0.9rem;">
+                        <li>Teaching data analytics & ML courses</li>
+                        <li>Conducting AI research</li>
+                        <li>Educational material development</li>
+                        <li>Student mentoring</li>
+                    </ul>
+                </div>
+                <div class="bento-highlight">
+                    <i class="fas fa-star" style="color: var(--primary);"></i>
+                    <strong>Current Role</strong>
+                </div>
+            </div>
+
+            <!-- Large Featured Card - Secondary Experience -->
+            <div class="glass-bento-item glass-bento-item-2">
+                <div>
+                    <h3 class="bento-title gradient-text">Data Analyst</h3>
+                    <p class="bento-company" style="color: var(--primary);">Archi Farming Equipment</p>
+                    <div class="bento-meta">
+                        <i class="fas fa-calendar"></i>
+                        <span>Jan 2024 — Aug 2024</span>
+                    </div>
+                    <div class="bento-meta">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>India</span>
+                    </div>
+                    <ul style="margin-top: 1rem; font-size: 0.9rem;">
+                        <li>Tableau automation (15hrs/week saved)</li>
+                        <li>85% data accuracy improvement</li>
+                        <li>Inventory forecasting optimization</li>
+                        <li>A/B testing campaigns</li>
+                    </ul>
+                </div>
+                <div class="bento-highlight">
+                    <i class="fas fa-chart-line" style="color: var(--primary);"></i>
+                    <strong>85% Accuracy Boost</strong>
+                </div>
+            </div>
+
+            <!-- Small Stat Card -->
+            <div class="glass-bento-item glass-bento-item-3" style="text-align: center; justify-content: center;">
+                <div>
+                    <i class="fas fa-briefcase" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
+                    <h3 class="gradient-text" style="font-size: 2rem; font-weight: 700;">2+</h3>
+                    <p style="color: var(--muted); font-size: 0.9rem;">Years Experience</p>
+                </div>
+            </div>
+
+            <!-- Small Stat Card -->
+            <div class="glass-bento-item glass-bento-item-4" style="text-align: center; justify-content: center;">
+                <div>
+                    <i class="fas fa-project-diagram" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
+                    <h3 class="gradient-text" style="font-size: 2rem; font-weight: 700;">10+</h3>
+                    <p style="color: var(--muted); font-size: 0.9rem;">Projects Completed</p>
+                </div>
+            </div>
+
+            <!-- Small Stat Card -->
+            <div class="glass-bento-item glass-bento-item-5" style="text-align: center; justify-content: center;">
+                <div>
+                    <i class="fas fa-award" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;"></i>
+                    <h3 class="gradient-text" style="font-size: 2rem; font-weight: 700;">5+</h3>
+                    <p style="color: var(--muted); font-size: 0.9rem;">Certifications</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Demo switching
+        function showDemo(num) {
+            // Hide all demos
+            document.querySelectorAll('.demo-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected demo
+            document.getElementById('demo' + num).classList.add('active');
+            
+            // Update button states
+            document.querySelectorAll('.demo-btn').forEach((btn, index) => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Tab functionality
+        function showTab(num) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById('tab' + num).classList.add('active');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const wasActive = item.classList.contains('active');
+            
+            // Close all
+            document.querySelectorAll('.accordion-item').forEach(acc => {
+                acc.classList.remove('active');
+            });
+            
+            // Open clicked if it wasn't active
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Logo details
+        function showLogoDetails(num) {
+            document.querySelectorAll('.logo-item').forEach(logo => {
+                logo.classList.remove('active');
+            });
+            event.target.closest('.logo-item').classList.add('active');
+
+            document.querySelectorAll('.logo-details').forEach(detail => {
+                detail.classList.remove('active');
+            });
+            document.getElementById('logo-detail-' + num).classList.add('active');
+        }
+
+        // List panel details
+        function showDetail(num) {
+            document.querySelectorAll('.list-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.closest('.list-item').classList.add('active');
+
+            document.querySelectorAll('.detail-content').forEach(detail => {
+                detail.classList.remove('active');
+            });
+            document.getElementById('detail-' + num).classList.add('active');
+        }
+    </script>
+</body>
+</html>
