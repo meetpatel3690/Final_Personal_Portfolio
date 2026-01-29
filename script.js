@@ -13,8 +13,9 @@ let certificatesData = null;
 function typewriterEffect() {
     const professions = [
         'Data Analyst',
-        'AI Engineer',
-        'SQL Developer',
+        'Data Engineer',
+        'ETL Developer',
+        'Product Analyst',
         'Business Analyst'
     ];
     const element = document.getElementById('typewriter');
@@ -97,6 +98,76 @@ function initShowMoreCerts() {
     }
 }
 
+function initShowMoreProjects() {
+    const showMoreBtn = document.getElementById('showMoreProjects');
+    const projectsGrid = document.querySelector('.projects-bento-grid');
+    
+    if (!showMoreBtn || !projectsGrid) return;
+    
+    const allProjectCards = projectsGrid.querySelectorAll('.project-bento-card');
+    
+    // Mark projects as hidden after the 4th one
+    allProjectCards.forEach((project, index) => {
+        if (index >= 4) {
+            project.setAttribute('data-hidden', 'true');
+        }
+    });
+    
+    // Update visibility based on current state
+    function updateProjectVisibility() {
+        const isExpanded = showMoreBtn.classList.contains('active');
+        allProjectCards.forEach((project, index) => {
+            if (project.getAttribute('data-hidden') === 'true' && !isExpanded) {
+                project.style.display = 'none';
+            }
+        });
+    }
+    
+    // Initial visibility update
+    updateProjectVisibility();
+    
+    // Show the button if there are more than 4 projects
+    if (allProjectCards.length > 4) {
+        showMoreBtn.style.display = 'inline-flex';
+    } else {
+        showMoreBtn.style.display = 'none';
+    }
+    
+    // Add click event
+    showMoreBtn.addEventListener('click', function() {
+        const showText = this.querySelector('.show-text');
+        const hideText = this.querySelector('.hide-text');
+        
+        this.classList.toggle('active');
+        const isExpanded = this.classList.contains('active');
+        
+        // Show/hide hidden projects
+        allProjectCards.forEach((project, index) => {
+            if (project.getAttribute('data-hidden') === 'true') {
+                if (isExpanded) {
+                    // Only show if it matches the current category filter
+                    const currentCategory = document.querySelector('.project-tab.active').dataset.category;
+                    if (project.dataset.category === currentCategory) {
+                        project.style.display = 'flex';
+                        project.classList.add('show');
+                    }
+                } else {
+                    project.style.display = 'none';
+                    project.classList.remove('show');
+                }
+            }
+        });
+        
+        if (isExpanded) {
+            showText.style.display = 'none';
+            hideText.style.display = 'inline';
+        } else {
+            showText.style.display = 'inline';
+            hideText.style.display = 'none';
+        }
+    });
+}
+
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
     typewriterEffect();
@@ -106,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAnimations();
     initProjectTabs();
     initShowMoreCerts();
+    initShowMoreProjects();
     loadAllData();
     updateFooter();
 });
@@ -234,11 +306,17 @@ function updateActiveNavLink() {
 function initProjectTabs() {
     const tabs = document.querySelectorAll('.project-tab');
     const projectCards = document.querySelectorAll('.project-bento-card');
+    const showMoreBtn = document.getElementById('showMoreProjects');
     
     // Show DEA category by default
-    projectCards.forEach(card => {
+    projectCards.forEach((card, index) => {
         if (card.dataset.category === 'DEA') {
-            card.style.display = 'flex';
+            // Only show first 4 initially
+            if (index < 4) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
         } else {
             card.style.display = 'none';
         }
@@ -247,19 +325,32 @@ function initProjectTabs() {
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const category = tab.dataset.category;
+            const isExpanded = showMoreBtn && showMoreBtn.classList.contains('active');
             
             // Update active tab
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
             
             // Filter project cards
-            projectCards.forEach(card => {
+            projectCards.forEach((card, index) => {
                 if (card.dataset.category === category) {
-                    card.style.display = 'flex';
+                    // Check if this is a hidden project (index >= 4)
+                    if (card.getAttribute('data-hidden') === 'true' && !isExpanded) {
+                        card.style.display = 'none';
+                    } else {
+                        card.style.display = 'flex';
+                    }
                 } else {
                     card.style.display = 'none';
                 }
             });
+            
+            // Reset the show more button when switching tabs
+            if (showMoreBtn && showMoreBtn.classList.contains('active')) {
+                showMoreBtn.classList.remove('active');
+                showMoreBtn.querySelector('.show-text').style.display = 'inline';
+                showMoreBtn.querySelector('.hide-text').style.display = 'none';
+            }
         });
     });
 }

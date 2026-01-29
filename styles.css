@@ -3883,6 +3883,18 @@ html:not(.dark) .modal-responsibilities li {
     transform: rotate(180deg);
 }
 
+/* Hidden Projects - Animation */
+.project-bento-card.show {
+    animation: fadeInUp 0.5s ease;
+}
+
+/* Show More Projects Button */
+.project-show-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
 /* Contact Section */
 .contact-section {
     position: relative;
