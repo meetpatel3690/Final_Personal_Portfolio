@@ -99,7 +99,7 @@
                     
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <h3 class="stat-number gradient-text">2+</h3>
+                            <h3 class="stat-number gradient-text">1.7+</h3>
                             <p class="stat-label">Years of Experience</p>
                         </div>
                         <div class="stat-item">
@@ -111,7 +111,7 @@
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary glow-effect">View Projects</a>
                         <a href="#contact" class="btn btn-outline">Contact Me</a>
-                        <a href="assets/resume/Meet_Patel_Resume(1).pdf" download="Meet_Patel_Resume.pdf" class="btn btn-outline">Download Resume</a>
+                        <a href="assets/resume/Meet-Patel.pdf" download="Meet_Patel_Resume.pdf" class="btn btn-outline">Download Resume</a>
                     </div>
 
                     <div class="social-links" id="socialLinks">
@@ -148,7 +148,7 @@
                     <div class="about-text">
                         
                         <p class="about-bio">
-                            I'm a <strong>data-driven professional with 2+ years of experience </strong>transforming complex datasets into strategic insights and building intelligent systems that solve real-world problems. I hold my <strong>Master's in Computer Information Systems with Specialization in Data Science at the University of Houston Clear Lake</strong>, I combine academic excellence with hands-on industry experience to deliver impactful solutions.
+                            I'm a <strong>data-driven professional with 1.7+ years of experience </strong>transforming complex datasets into strategic insights and building intelligent systems that solve real-world problems. I hold my <strong>Master's in Computer Information Systems with Specialization in Data Science at the University of Houston Clear Lake</strong>, I combine academic excellence with hands-on industry experience to deliver impactful solutions.
                         </p>
                         <p class="about-bio">
                             As a <strong>Graduate Teaching & Research Assistant</strong> at UHCL, I mentor students in data analytics and machine learning while conducting cutting-edge AI research. Previously, as a <strong>Data Analyst at Archi Farming Equipment</strong>, I automated Data workflows (saving 15+ hours weekly), improved data accuracy by 85%, and optimized inventory forecasting that directly enhanced operational efficiency and campaign performance.
@@ -608,12 +608,14 @@
                         <div class="cert-badge">Academic Award</div>
                         <p class="cert-description">Secured 1st Rank in the entire university for exceptional academic performance throughout the program.</p>
                         
-                        <div class="cert-images">
-                            <img src="assets/certifications/Gold_Medal_1.jpg" alt="Gold Medal Certificate 1" onerror="this.style.display='none'">
-                            <img src="assets/certifications/Gold_Medal_2.jpg" alt="Gold Medal Certificate 2" onerror="this.style.display='none'">
-                            <img src="assets/certifications/Gold_Medal_3.jpg" alt="Gold Medal Certificate 3" onerror="this.style.display='none'">
-                            <img src="assets/certifications/Gold_Medal_4.jpg" alt="Gold Medal Certificate 4" onerror="this.style.display='none'">
-                            <img src="assets/certifications/Gold_Medal_5.jpg" alt="Gold Medal Certificate 5" onerror="this.style.display='none'">
+                        <div class="cert-images-wrapper">
+                            <div class="cert-images">
+                                <img src="assets/certifications/Gold_Medal_1.jpg" alt="Gold Medal Certificate 1" onerror="this.style.display='none'">
+                                <img src="assets/certifications/Gold_Medal_2.jpg" alt="Gold Medal Certificate 2" onerror="this.style.display='none'">
+                                <img src="assets/certifications/Gold_Medal_3.jpg" alt="Gold Medal Certificate 3" onerror="this.style.display='none'">
+                                <img src="assets/certifications/Gold_Medal_4.jpg" alt="Gold Medal Certificate 4" onerror="this.style.display='none'">
+                                <img src="assets/certifications/Gold_Medal_5.jpg" alt="Gold Medal Certificate 5" onerror="this.style.display='none'">
+                            </div>
                         </div>
                     </div>
 
@@ -630,10 +632,12 @@
                         <div class="cert-badge">Academic Award</div>
                         <p class="cert-description">Awarded for outstanding academic performance and achieving the highest GPA (9.98/10.00) in the college and the university.</p>
                         
-                        <div class="cert-images">
-                            <img src="assets/certifications/College_Gold_Medal_1.jpg" alt="College Gold Medal " onerror="this.style.display='none'">
-                            <img src="assets/certifications/College_Gold_Medal_3.jpg" alt="College Gold Medal 2" onerror="this.style.display='none'">
-                            <img src="assets/certifications/College_Gold_Medal_2.jpg" alt="College Gold Medal 3" onerror="this.style.display='none'">
+                        <div class="cert-images-wrapper">
+                            <div class="cert-images">
+                                <img src="assets/certifications/College_Gold_Medal_1.jpg" alt="College Gold Medal " onerror="this.style.display='none'">
+                                <img src="assets/certifications/College_Gold_Medal_3.jpg" alt="College Gold Medal 2" onerror="this.style.display='none'">
+                                <img src="assets/certifications/College_Gold_Medal_2.jpg" alt="College Gold Medal 3" onerror="this.style.display='none'">
+                            </div>
                         </div>
                     </div>
 
@@ -652,10 +656,12 @@
                         <div class="cert-badge">Academic Honor</div>
                         <p class="cert-description">Consistently maintained high academic standards with GPA of 3.75/4.0 across all semesters.</p>
                         
-                        <div class="cert-images">
-                            <img src="assets/certifications/UHCL1.jpeg" alt="Dean's List Certificate 1" onerror="this.style.display='none'">
-                            <img src="assets/certifications/UHCL2.jpg" alt="Dean's List Certificate 2" onerror="this.style.display='none'">
-                            <img src="assets/certifications/UHCL3.jpg" alt="Dean's List Certificate 3" onerror="this.style.display='none'">
+                        <div class="cert-images-wrapper">
+                            <div class="cert-images">
+                                <img src="assets/certifications/UHCL1.jpeg" alt="Dean's List Certificate 1" onerror="this.style.display='none'">
+                                <img src="assets/certifications/UHCL2.jpg" alt="Dean's List Certificate 2" onerror="this.style.display='none'">
+                                <img src="assets/certifications/UHCL3.jpg" alt="Dean's List Certificate 3" onerror="this.style.display='none'">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -668,8 +674,14 @@
                     Professional Certifications
                 </h3>
                 
+                <!-- Certificate Tabs -->
+                <div class="cert-tabs">
+                    <button class="cert-tab active" data-category="completed">Completed</button>
+                    <button class="cert-tab" data-category="in-progress">In Progress</button>
+                </div>
+                
                 <div class="certifications-grid">
-                    <div class="cert-card professional-cert">
+                    <div class="cert-card professional-cert" data-category="in-progress">
                         <div class="cert-header">
                             <div class="cert-icon">
                                 <i class="fas fa-certificate"></i>
@@ -684,12 +696,14 @@
                         </div>
                         <div class="cert-badge">In Progress</div>
                         <p class="cert-description">Professional certification demonstrating expertise in designing and implementing Agentic AI systems using LangChain and LangGraph frameworks.</p>
-                        <div class="cert-images">
-                            <img src="assets/certifications/agentic-ai-langchain-langgraph.jpg" alt="Agentic AI with LangChain and LangGraph Certificate" onerror="this.style.display='none'">
+                        <div class="cert-images-wrapper">
+                            <div class="cert-images">
+                                <img src="assets/certifications/agentic-ai-langchain-langgraph.jpg" alt="Agentic AI with LangChain and LangGraph Certificate" onerror="this.style.display='none'">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="cert-card course-completion">
+                    <div class="cert-card course-completion" data-category="in-progress">
                         <div class="cert-header">
                             <div class="cert-icon">
                                 <i class="fas fa-graduation-cap"></i>
@@ -705,12 +719,14 @@
                         <div class="cert-badge">In Progress</div>
                         <p class="cert-description">Comprehensive test problmes covering Advance SQL for data science and business intelligence concepts.</p>
                         
-                        <div class="cert-images">
-                            <img src="assets/certifications/ml-coursera-1.jpg" alt="ML Certificate 1" onerror="this.style.display='none'">
+                        <div class="cert-images-wrapper">
+                            <div class="cert-images">
+                                <img src="assets/certifications/ml-coursera-1.jpg" alt="ML Certificate 1" onerror="this.style.display='none'">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="cert-card course-completion">
+                    <div class="cert-card course-completion" data-category="completed">
                         <div class="cert-header">
                             <div class="cert-icon">
                                 <i class="fas fa-book-open"></i>
@@ -726,11 +742,13 @@
                         <div class="cert-badge">Course Completion</div>
                         <p class="cert-description">Intermediate level SQL skills demonstrated through comprehensive problem-solving on HackerRank.</p>
                         
-                        <div class="cert-images">
-                            <img src="assets/certifications/Intermidiate_SQL.png" alt="HackerRank Certificate" onerror="this.style.display='none'">
+                        <div class="cert-images-wrapper">
+                            <div class="cert-images">
+                                <img src="assets/certifications/Intermidiate_SQL.png" alt="HackerRank Certificate" onerror="this.style.display='none'">
+                            </div>
                         </div>
                     </div>
-                    <div class="cert-card course-completion">
+                    <div class="cert-card course-completion" data-category="completed">
                         <div class="cert-header">
                             <div class="cert-icon">
                                 <i class="fas fa-book-open"></i>
@@ -746,8 +764,10 @@
                         <div class="cert-badge">Course Completion</div>
                         <p class="cert-description">Basic level SQL skills demonstrated through comprehensive problem-solving on HackerRank.</p>
                         
-                        <div class="cert-images">
-                            <img src="assets/certifications/Basic_SQL.png" alt="DataCamp Certificate" onerror="this.style.display='none'">
+                        <div class="cert-images-wrapper">
+                            <div class="cert-images">
+                                <img src="assets/certifications/Basic_SQL.png" alt="DataCamp Certificate" onerror="this.style.display='none'">
+                            </div>
                         </div>
                     </div>
                 </div>

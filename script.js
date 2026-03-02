@@ -15,8 +15,7 @@ function typewriterEffect() {
         'Data Analyst',
         'Data Engineer',
         'ETL Developer',
-        'Product Analyst',
-        'Business Analyst'
+        'Product Analyst'
     ];
     const element = document.getElementById('typewriter');
     if (!element) return;
@@ -98,6 +97,42 @@ function initShowMoreCerts() {
     }
 }
 
+// Certificate Tabs Functionality
+function initCertTabs() {
+    const tabs = document.querySelectorAll('.cert-tab');
+    const certCards = document.querySelectorAll('.cert-card[data-category]');
+    
+    if (tabs.length === 0) return;
+    
+    // Show completed category by default
+    certCards.forEach(card => {
+        if (card.dataset.category === 'completed') {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const category = tab.dataset.category;
+            
+            // Update active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            // Filter certificate cards
+            certCards.forEach(card => {
+                if (card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
 function initShowMoreProjects() {
     const showMoreBtn = document.getElementById('showMoreProjects');
     const projectsGrid = document.querySelector('.projects-bento-grid');
@@ -176,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticles();
     initAnimations();
     initProjectTabs();
+    initCertTabs();
     initShowMoreCerts();
     initShowMoreProjects();
     loadAllData();

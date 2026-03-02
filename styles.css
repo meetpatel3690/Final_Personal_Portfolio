@@ -1017,6 +1017,51 @@ body::-webkit-scrollbar {
     transform: translateY(-1px);
 }
 
+/* Certificate Tabs - Same styling as project tabs */
+.cert-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: calc(var(--radius) * 3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cert-tab {
+    padding: 0.875rem 1.75rem;
+    background: transparent;
+    border: none;
+    border-radius: calc(var(--radius) * 2);
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    white-space: nowrap;
+}
+
+.cert-tab:hover {
+    color: var(--primary);
+    background: rgba(124, 77, 255, 0.1);
+}
+
+.cert-tab.active {
+    background: linear-gradient(135deg, #7C4DFF, #00BCD4);
+    color: white;
+    box-shadow: 0 4px 15px rgba(124, 77, 255, 0.4);
+    transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
     .project-tabs {
         flex-direction: column;
@@ -1025,6 +1070,17 @@ body::-webkit-scrollbar {
     }
     
     .project-tab {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .cert-tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem;
+    }
+    
+    .cert-tab {
         width: 100%;
         text-align: center;
     }
@@ -1796,64 +1852,51 @@ body::-webkit-scrollbar {
 
     /* Certifications & Achievements Mobile */
     .certifications-grid {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
+        grid-template-columns: 1fr;
     }
 
     .cert-card {
-        padding: 1.25rem;
+        padding: 1.5rem;
     }
 
     .cert-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
+        gap: 1.25rem;
     }
 
     .cert-icon {
-        margin: 0 auto;
         width: 60px;
         height: 60px;
         min-width: 60px;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }
 
     .cert-info {
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        padding-right: 0 !important;
+        padding-right: 2.5rem;
     }
 
     .cert-title {
-        font-size: 1rem;
-        line-height: 1.4;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        text-align: center !important;
-        padding-right: 0 !important;
+        font-size: 1.05rem;
+        line-height: 1.35;
     }
 
     .cert-issuer {
-        font-size: 0.85rem;
-        text-align: center;
+        font-size: 0.9rem;
     }
 
     .cert-badge {
         font-size: 0.7rem;
-        padding: 0.3rem 0.8rem;
-        margin-top: 0.5rem;
+        padding: 0.35rem 0.85rem;
+        margin-top: 0.4rem;
     }
 
     .cert-description {
-        text-align: center;
         font-size: 0.85rem;
         line-height: 1.5;
     }
 
     .cert-images {
-        gap: 0.75rem;
+        gap: 0.85rem;
     }
 
     .cert-images img {
@@ -3594,6 +3637,14 @@ html:not(.dark) .modal-responsibilities li {
     margin-top: 3rem;
 }
 
+/* Achievement Cards - Keep in vertical grid */
+.achievements-subsection .cert-card {
+    min-width: auto;
+    max-width: none;
+    scroll-snap-align: none;
+}
+
+/* Base Certificate Card Styles */
 .cert-card {
     background: var(--card);
     border-radius: calc(var(--radius) * 2);
@@ -3624,7 +3675,7 @@ html:not(.dark) .modal-responsibilities li {
     border-color: var(--primary);
 }
 
-/* Certificate Card Elements */
+/* Certificate Card Elements - Base (for Achievements) */
 .cert-header {
     display: flex;
     gap: 1.5rem;
@@ -3733,6 +3784,11 @@ html:not(.dark) .modal-responsibilities li {
     color: #22c55e;
 }
 
+/* Certificate Images Wrapper */
+.cert-images-wrapper {
+    margin-top: 1rem;
+}
+
 /* Certificate Images Horizontal Scroll */
 .cert-images {
     display: flex;
@@ -3740,13 +3796,33 @@ html:not(.dark) .modal-responsibilities li {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 1rem 0;
-    margin-top: 1rem;
-    scrollbar-width: none;
+    padding: 1rem 0 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) rgba(255, 255, 255, 0.05);
+    scroll-behavior: smooth;
+    position: relative;
 }
 
+/* Custom Scrollbar Styling for Webkit (Chrome, Safari, Edge) */
 .cert-images::-webkit-scrollbar {
-    display: none;
+    height: 8px;
+}
+
+.cert-images::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin: 0 1rem;
+}
+
+.cert-images::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.cert-images::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    box-shadow: 0 0 10px rgba(124, 77, 255, 0.5);
 }
 
 .cert-images img {
