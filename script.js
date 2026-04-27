@@ -893,6 +893,19 @@ const experienceResponsibilities = {
         ]
     },
     exp2: {
+        title: 'Data & Insights Analyst ',
+        company: 'University of Houston Clear-Lake - OIAS Office',
+        location: 'Onsite - USA',
+        duration: 'Jan 2025 — Aug 2025',
+        responsibilities: [
+            'Analyzed datasets of 1,000+ international student records using Power BI to uncover enrollment patterns, admission trends, and recruitment opportunities — directly informing admissions strategy and resource planning.',
+            'Built interactive dashboards and reports tracking key admissions KPIs, replacing manual spreadsheet workflows and delivering faster decision-ready insights to department leadership.',
+            'Maintained and updated student databases ensuring data accuracy, completeness, and consistency across records to support reliable downstream reportings',
+            'Coordinated cross-functional data reporting between admissions and university departments, improving data consistency and accuracy across teams.',
+            'Trained and onboarded incoming team members on data workflows, reporting tools, and office systems — reducing ramp-up time for new staff.',
+        ]
+    },
+    exp3: {
         title: 'Data Analyst',
         company: 'Archi Farming Equipment',
         location: 'Onsite - India',
@@ -906,7 +919,7 @@ const experienceResponsibilities = {
             'Increased customer engagement by optimizing marketing campaigns through A/B testing on email promotions'
         ]
     },
-    exp3: {
+    exp4: {
         title: 'Data Analyst - Intern',
         company: 'Atmiya Developers',
         location: 'Remote -India',
