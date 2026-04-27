@@ -9,47 +9,6 @@ let experienceData = null;
 let educationData = null;
 let certificatesData = null;
 
-// Typewriter Effect for Hero Profession
-function typewriterEffect() {
-    const professions = [
-        'Data Analyst',
-        'Data Engineer',
-        'ETL Developer',
-        'Product Analyst'
-    ];
-    const element = document.getElementById('typewriter');
-    if (!element) return;
-    
-    let professionIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    
-    function type() {
-        const currentProfession = professions[professionIndex];
-        
-        if (!isDeleting && charIndex <= currentProfession.length) {
-            element.textContent = currentProfession.substring(0, charIndex);
-            charIndex++;
-            setTimeout(type, 150); // Typing speed
-        } else if (!isDeleting && charIndex > currentProfession.length) {
-            // Pause before deleting
-            setTimeout(() => {
-                isDeleting = true;
-                type();
-            }, 2000);
-        } else if (isDeleting && charIndex > 0) {
-            element.textContent = currentProfession.substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(type, 100); // Deleting speed
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            professionIndex = (professionIndex + 1) % professions.length; // Move to next profession
-            setTimeout(type, 500); // Pause before typing next profession
-        }
-    }
-    
-    type();
-}
 
 // Show More Certificates Functionality
 function initShowMoreCerts() {
@@ -205,7 +164,6 @@ function initShowMoreProjects() {
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
-    typewriterEffect();
     initTheme();
     initNavigation();
     initParticles();
