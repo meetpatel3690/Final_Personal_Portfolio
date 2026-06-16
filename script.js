@@ -834,7 +834,20 @@ function flipCard(button) {
 }
 // Experience Responsibilities Modal
 const experienceResponsibilities = {
-    exp1: {
+    exp5: {
+        title: 'Data Analyst I',
+        company: 'NITU Group',
+        location: 'Houston, TX, USA',
+        duration: 'May 2026 — Present',
+        responsibilities: [
+            'Integrate and normalize data from 6 source systems (Qu Beyond, SynergySuite, NCR, Toast, Zenoti, FocusPOS) into GCP BigQuery across 94+ franchise locations in TX, FL, and CO.',
+            'Build and maintain dbt staging and mart models to transform raw POS, payroll, and inventory data into clean, analytics-ready tables for cross-brand reporting.',
+            'Build and maintain Power BI semantic models and develop daily & weekly metrics reports across all store locations for each brand (Churchs Chicken, Shipleys Donuts, Nothing Bundt Cakes, Cost Cutters & Supercuts).',
+            'Enable leadership to track cross-brand and cross-store performance through a single unified reporting layer in Power BI.',
+            'Collaborate with operations teams across TX, FL, and CO to understand source data workflows and ensure reporting accuracy across all franchise brands.'
+        ]
+    },
+    exp4: {
         title: 'Graduate Teaching & Research Assistant',
         company: 'University of Houston Clear-Lake',
         location: 'Houston, TX, USA',
@@ -850,7 +863,7 @@ const experienceResponsibilities = {
             'Collaborated with faculty on research projects involving machine learning and predictive analytics'
         ]
     },
-    exp2: {
+    exp3: {
         title: 'Data & Insights Analyst ',
         company: 'University of Houston Clear-Lake - OIAS Office',
         location: 'Onsite - USA',
@@ -863,7 +876,7 @@ const experienceResponsibilities = {
             'Trained and onboarded incoming team members on data workflows, reporting tools, and office systems — reducing ramp-up time for new staff.',
         ]
     },
-    exp3: {
+    exp2: {
         title: 'Data Analyst',
         company: 'Archi Farming Equipment',
         location: 'Onsite - India',
@@ -877,7 +890,7 @@ const experienceResponsibilities = {
             'Increased customer engagement by optimizing marketing campaigns through A/B testing on email promotions'
         ]
     },
-    exp4: {
+    exp1: {
         title: 'Data Analyst - Intern',
         company: 'Atmiya Developers',
         location: 'Remote -India',
