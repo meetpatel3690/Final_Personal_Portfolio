@@ -835,7 +835,7 @@ function flipCard(button) {
 // Experience Responsibilities Modal
 const experienceResponsibilities = {
     exp5: {
-        title: 'Data Analyst I',
+        title: 'Data Analyst II',
         company: 'NITU Group',
         location: 'Houston, TX, USA',
         duration: 'May 2026 — Present',
