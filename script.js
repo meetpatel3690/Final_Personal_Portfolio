@@ -59,7 +59,7 @@ function initShowMoreCerts() {
 // Certificate Tabs Functionality
 function initCertTabs() {
     const tabs = document.querySelectorAll('.cert-tab');
-    const certCards = document.querySelectorAll('.cert-card[data-category]');
+    const certCards = document.querySelectorAll('.cert-row[data-category]');
     
     if (tabs.length === 0) return;
     
