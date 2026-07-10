@@ -4388,6 +4388,35 @@ html:not(.dark) .modal-responsibilities li {
     }
 }
 
+@media (max-width: 540px) {
+    .badges-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.85rem;
+    }
+
+    .badge-tile {
+        padding: 1.25rem 0.9rem 1.1rem;
+    }
+
+    .badge-tile-img-area {
+        height: 90px;
+    }
+
+    .badge-tile-img-area img {
+        max-height: 90px;
+    }
+
+    .badge-tile-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+
+    .badge-tile-name {
+        font-size: 0.85rem;
+    }
+}
+
 /* Show More Projects Button */
 .project-show-more-container {
     display: flex;
