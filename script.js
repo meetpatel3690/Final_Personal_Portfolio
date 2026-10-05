@@ -840,11 +840,10 @@ const experienceResponsibilities = {
         location: 'Houston, TX, USA',
         duration: 'May 2026 — Present',
         responsibilities: [
-            'Integrate and normalize data from 6 source systems (Qu Beyond, SynergySuite, NCR, Toast, Zenoti, FocusPOS) into GCP BigQuery across 94+ franchise locations in TX, FL, and CO.',
-            'Build and maintain dbt staging and mart models to transform raw POS, payroll, and inventory data into clean, analytics-ready tables for cross-brand reporting.',
-            'Build and maintain Power BI semantic models and develop daily & weekly metrics reports across all store locations for each brand (Churchs Chicken, Shipleys Donuts, Nothing Bundt Cakes, Cost Cutters & Supercuts).',
-            'Enable leadership to track cross-brand and cross-store performance through a single unified reporting layer in Power BI.',
-            'Collaborate with operations teams across TX, FL, and CO to understand source data workflows and ensure reporting accuracy across all franchise brands.'
+            'Consolidate operational data from 7 source systems (QuBeyond, FocusPOS, NCR, Toast, 7shifts, SynergySuite, Zenoti) via AWS S3 and GCP Storage into GCP BigQuery for 94+ franchise locations across TX, FL, and CO, checking quality, cleansing, and structuring raw data for downstream analysis.',
+            'Maintain 60+ dbt staging and mart models and built 16+ new models for historical backloading of sales and payroll data, converting raw POS, labor, and inventory data into analytics-ready tables for consistent cross-brand reporting.',
+            'Develop Power BI semantic models and interactive daily/weekly store-level dashboards across five brands (Church\'s Chicken, Shipley\'s Donuts, Nothing Bundt Cakes, Cost Cutters, Supercuts), giving leadership visibility into cross-store operational performance.',
+            'Walk operations and leadership stakeholders through report findings in plain, non-technical terms and clarify metric definitions so the numbers can be acted on.'
         ]
     },
     exp4: {
@@ -869,11 +868,9 @@ const experienceResponsibilities = {
         location: 'Onsite - USA',
         duration: 'Jan 2025 — Aug 2025',
         responsibilities: [
-            'Analyzed datasets of 1,000+ international student records using Power BI to uncover enrollment patterns, admission trends, and recruitment opportunities — directly informing admissions strategy and resource planning.',
-            'Built interactive dashboards and reports tracking key admissions KPIs, replacing manual spreadsheet workflows and delivering faster decision-ready insights to department leadership.',
-            'Maintained and updated student databases ensuring data accuracy, completeness, and consistency across records to support reliable downstream reportings',
-            'Coordinated cross-functional data reporting between admissions and university departments, improving data consistency and accuracy across teams.',
-            'Trained and onboarded incoming team members on data workflows, reporting tools, and office systems — reducing ramp-up time for new staff.',
+            'Analyzed 1,000+ international student records in Power BI to find enrollment patterns and admission trends, informing admissions strategy and resource planning.',
+            'Built interactive dashboards tracking key admissions KPIs, replacing manual spreadsheet workflows and giving department leadership faster insights.',
+            'Maintained the student database for accuracy, trained new team members on data workflows, and coordinated reporting between Admissions and other departments.'
         ]
     },
     exp2: {
@@ -882,24 +879,21 @@ const experienceResponsibilities = {
         location: 'Onsite - India',
         duration: 'Jan 2023 — Dec 2023',
         responsibilities: [
-            'Built time series forecasting models in Python (Pandas) to predict monthly and seasonal demand, improving forecast accuracy by 22% and reducing stock-outs by 18%.',
-            'Automated sales and expense reports, integrating real-time revenue and cost data into Tableau, saving 15 hours per week',
-            'Improved data accuracy by 85% by automating data validation and transformation, reducing vendor transaction errors',
-            'Performed EDA, trend analysis, seasonality decomposition, and feature engineering on 3+ years of historical data, identifying peak demand cycles and optimizing production planning by 15%.',
-            'Developed interactive Power BI and Tableau dashboards and automated SQL-Python reporting pipelines, reducing manual reporting effort by 40% and supporting weekly decision-making for 10+ stakeholders',
-            'Increased customer engagement by optimizing marketing campaigns through A/B testing on email promotions'
+            'Co-developed Python time-series forecasting models that improved demand forecast accuracy by 22% and reduced stock-outs by 18%.',
+            'Performed EDA and feature engineering on 3+ years of historical data, improving production planning efficiency by 15%.',
+            'Built automated SQL and Python ETL pipelines, cutting manual reporting effort by 40% for 10+ stakeholders and reducing data inconsistencies by 30%.',
+            'Built Power BI and Tableau dashboards tracking inventory KPIs.'
         ]
     },
     exp1: {
         title: 'Data Analyst - Intern',
         company: 'Atmiya Developers',
         location: 'Remote -India',
-        duration: 'Oct 2022 — Dec 2022',
+        duration: 'Aug 2022 — Dec 2022',
         responsibilities: [
-            'Analyzed structured and semi-structured datasets using Microsoft Excel, SQL, and Python, supporting data-driven decision-making across product and engineering teams.',
-            'Performed data cleaning, data transformation, and data validation using Excel formulas, SQL queries, and Python (Pandas, NumPy) to improve data accuracy and consistency.',
-            'Learn & Developed interactive dashboards and reports using Power BI / Tableau to track key performance indicators (KPIs) and business metrics.',
-            'Learned & Applied how to automate basic data ETL piplines using Python scripts and SQL.'
+            'Wrote and optimized SQL queries on 1.5M+ records to extract, filter, and aggregate data for product and sales team analysis.',
+            'Built automated SQL and Python reporting scripts, reducing manual reporting effort by 30%, and cleaned and standardized multi-source datasets.',
+            'Validated accuracy across sources by cross-checking row counts and aggregate totals and flagging anomalies before delivery.'
         ]
     }
 };
