@@ -92,21 +92,74 @@ function initCertTabs() {
     });
 }
 
+// Project Tabs
+function initProjectTabs() {
+    const tabs = document.querySelectorAll('.project-tab');
+    const projectCards = document.querySelectorAll('.project-bento-card');
+    const showMoreBtn = document.getElementById('showMoreProjects');
+
+    // Show DEA category by default
+    projectCards.forEach((card, index) => {
+        if (card.dataset.category === 'DEA') {
+            // Only show first 4 initially
+            if (index < 4) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const category = tab.dataset.category;
+            const isExpanded = showMoreBtn && showMoreBtn.classList.contains('active');
+
+            // Update active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Filter project cards
+            projectCards.forEach((card, index) => {
+                if (card.dataset.category === category) {
+                    // Check if this is a hidden project (index >= 4)
+                    if (card.getAttribute('data-hidden') === 'true' && !isExpanded) {
+                        card.style.display = 'none';
+                    } else {
+                        card.style.display = 'flex';
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Reset the show more button when switching tabs
+            if (showMoreBtn && showMoreBtn.classList.contains('active')) {
+                showMoreBtn.classList.remove('active');
+                showMoreBtn.querySelector('.show-text').style.display = 'inline';
+                showMoreBtn.querySelector('.hide-text').style.display = 'none';
+            }
+        });
+    });
+}
+
 function initShowMoreProjects() {
     const showMoreBtn = document.getElementById('showMoreProjects');
     const projectsGrid = document.querySelector('.projects-bento-grid');
-    
+
     if (!showMoreBtn || !projectsGrid) return;
-    
+
     const allProjectCards = projectsGrid.querySelectorAll('.project-bento-card');
-    
+
     // Mark projects as hidden after the 4th one
     allProjectCards.forEach((project, index) => {
         if (index >= 4) {
             project.setAttribute('data-hidden', 'true');
         }
     });
-    
+
     // Update visibility based on current state
     function updateProjectVisibility() {
         const isExpanded = showMoreBtn.classList.contains('active');
@@ -116,25 +169,25 @@ function initShowMoreProjects() {
             }
         });
     }
-    
+
     // Initial visibility update
     updateProjectVisibility();
-    
+
     // Show the button if there are more than 4 projects
     if (allProjectCards.length > 4) {
         showMoreBtn.style.display = 'inline-flex';
     } else {
         showMoreBtn.style.display = 'none';
     }
-    
+
     // Add click event
     showMoreBtn.addEventListener('click', function() {
         const showText = this.querySelector('.show-text');
         const hideText = this.querySelector('.hide-text');
-        
+
         this.classList.toggle('active');
         const isExpanded = this.classList.contains('active');
-        
+
         // Show/hide hidden projects
         allProjectCards.forEach((project, index) => {
             if (project.getAttribute('data-hidden') === 'true') {
@@ -151,7 +204,7 @@ function initShowMoreProjects() {
                 }
             }
         });
-        
+
         if (isExpanded) {
             showText.style.display = 'none';
             hideText.style.display = 'inline';
@@ -294,59 +347,6 @@ function updateActiveNavLink() {
             }
         });
     }
-}
-
-// Project Tabs
-function initProjectTabs() {
-    const tabs = document.querySelectorAll('.project-tab');
-    const projectCards = document.querySelectorAll('.project-bento-card');
-    const showMoreBtn = document.getElementById('showMoreProjects');
-    
-    // Show DEA category by default
-    projectCards.forEach((card, index) => {
-        if (card.dataset.category === 'DEA') {
-            // Only show first 4 initially
-            if (index < 4) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
-        } else {
-            card.style.display = 'none';
-        }
-    });
-    
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const category = tab.dataset.category;
-            const isExpanded = showMoreBtn && showMoreBtn.classList.contains('active');
-            
-            // Update active tab
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            
-            // Filter project cards
-            projectCards.forEach((card, index) => {
-                if (card.dataset.category === category) {
-                    // Check if this is a hidden project (index >= 4)
-                    if (card.getAttribute('data-hidden') === 'true' && !isExpanded) {
-                        card.style.display = 'none';
-                    } else {
-                        card.style.display = 'flex';
-                    }
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // Reset the show more button when switching tabs
-            if (showMoreBtn && showMoreBtn.classList.contains('active')) {
-                showMoreBtn.classList.remove('active');
-                showMoreBtn.querySelector('.show-text').style.display = 'inline';
-                showMoreBtn.querySelector('.hide-text').style.display = 'none';
-            }
-        });
-    });
 }
 
 // Particles Animation
@@ -836,14 +836,17 @@ function flipCard(button) {
 const experienceResponsibilities = {
     exp5: {
         title: 'Data Analyst II',
-        company: 'NITU Group',
+        company: 'Nitu Group',
         location: 'Houston, TX, USA',
         duration: 'May 2026 — Present',
         responsibilities: [
-            'Consolidate operational data from 7 source systems (QuBeyond, FocusPOS, NCR, Toast, 7shifts, SynergySuite, Zenoti) via AWS S3 and GCP Storage into GCP BigQuery for 94+ franchise locations across TX, FL, and CO, checking quality, cleansing, and structuring raw data for downstream analysis.',
-            'Maintain 60+ dbt staging and mart models and built 16+ new models for historical backloading of sales and payroll data, converting raw POS, labor, and inventory data into analytics-ready tables for consistent cross-brand reporting.',
-            'Develop Power BI semantic models and interactive daily/weekly store-level dashboards across five brands (Church\'s Chicken, Shipley\'s Donuts, Nothing Bundt Cakes, Cost Cutters, Supercuts), giving leadership visibility into cross-store operational performance.',
-            'Walk operations and leadership stakeholders through report findings in plain, non-technical terms and clarify metric definitions so the numbers can be acted on.'
+            'Built a Power BI cost-vs-sales dashboard that flagged stores with high food and labor costs relative to sales; leadership used it to cut costs, lifting profit margin from 10% to 14% across one of Nitu\'s 4 business units.',
+            'Consolidate 7 source systems (QuBeyond, FocusPOS, NCR, Toast, 7shifts, SynergySuite, Zenoti) via AWS S3 and GCS into an ~87M-row BigQuery warehouse serving 94+ franchise locations across TX, FL, and CO.',
+            'Built Python ingestion from the Toast and 7shifts APIs into BigQuery for 12 Nothing Bundt Cakes stores, eliminating 2.5 hours of daily manual downloads and hand-built reports, with zero missed loads since launch.',
+            'Built 16+ dbt models that backloaded up to 5 years of Church\'s Chicken sales and payroll history across 21 stores, enabling year-over-year and cross-brand trend reporting.',
+            'Absorbed 6 Zenoti schema changes with zero reporting downtime (earlier changes had caused outages) and fixed the underlying pipeline flaw.',
+            'Fixed an ISO-week vs. calendar-year bug in the Shipley\'s sales model that returned NULL prior-year sales at year boundaries, restoring YoY accuracy for all 8 stores.',
+            'Maintain 60+ models in a 115+ model dbt project and Power BI reporting used by 9 leaders, including 4 area managers and 3 regional managers.'
         ]
     },
     exp4: {
@@ -863,14 +866,14 @@ const experienceResponsibilities = {
         ]
     },
     exp3: {
-        title: 'Data & Insights Analyst ',
+        title: 'Data & Insights Analyst (Part-time)',
         company: 'University of Houston Clear-Lake - OIAS Office',
         location: 'Onsite - USA',
         duration: 'Jan 2025 — Aug 2025',
         responsibilities: [
-            'Analyzed 1,000+ international student records in Power BI to find enrollment patterns and admission trends, informing admissions strategy and resource planning.',
-            'Built interactive dashboards tracking key admissions KPIs, replacing manual spreadsheet workflows and giving department leadership faster insights.',
-            'Maintained the student database for accuracy, trained new team members on data workflows, and coordinated reporting between Admissions and other departments.'
+            'Analyzed 1,000+ international student records in Power BI and identified rising enrollment in healthcare and technology programs since 2020, led by applicants from South Asia.',
+            'Built Power BI dashboards tracking admissions KPIs, replacing manual spreadsheet tracking for department leadership.',
+            'Trained 4 new employees from scratch on the student database and reporting workflows.'
         ]
     },
     exp2: {
@@ -879,10 +882,9 @@ const experienceResponsibilities = {
         location: 'Onsite - India',
         duration: 'Jan 2023 — Dec 2023',
         responsibilities: [
-            'Co-developed Python time-series forecasting models that improved demand forecast accuracy by 22% and reduced stock-outs by 18%.',
-            'Performed EDA and feature engineering on 3+ years of historical data, improving production planning efficiency by 15%.',
-            'Built automated SQL and Python ETL pipelines, cutting manual reporting effort by 40% for 10+ stakeholders and reducing data inconsistencies by 30%.',
-            'Built Power BI and Tableau dashboards tracking inventory KPIs.'
+            'Built Python time-series forecasting models for 6 products on 3+ years of sales history, improving demand forecast accuracy by 22% and reducing stock-outs by 18%.',
+            'Automated SQL and Python ETL pipelines feeding reports for 10+ stakeholders, saving 15 hours of manual work per week.',
+            'Built Power BI and Tableau dashboards tracking inventory levels for all 6 forecasted products.'
         ]
     },
     exp1: {
@@ -891,9 +893,9 @@ const experienceResponsibilities = {
         location: 'Remote -India',
         duration: 'Aug 2022 — Dec 2022',
         responsibilities: [
-            'Wrote and optimized SQL queries on 1.5M+ records to extract, filter, and aggregate data for product and sales team analysis.',
-            'Built automated SQL and Python reporting scripts, reducing manual reporting effort by 30%, and cleaned and standardized multi-source datasets.',
-            'Validated accuracy across sources by cross-checking row counts and aggregate totals and flagging anomalies before delivery.'
+            'Wrote and optimized SQL queries across 1.5M+ sales records for product and sales team analysis.',
+            'Automated recurring reports with SQL and Python, saving 4 hours of manual work per week.',
+            'Reconciled row counts and aggregate totals across sources to catch data errors before delivery.'
         ]
     }
 };

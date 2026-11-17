@@ -2488,7 +2488,7 @@ body::-webkit-scrollbar {
 /* Skills Mastery Grid */
 .skills-mastery-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
     margin-top: 4rem;
 }
@@ -2636,7 +2636,6 @@ body::-webkit-scrollbar {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .skills-mastery-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
 
@@ -4438,6 +4437,14 @@ html:not(.dark) .modal-responsibilities li {
     display: flex;
     justify-content: center;
     margin-top: 3rem;
+}
+
+/* Multiple links on a single project card (e.g. Site + GitHub) */
+.project-card-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 /* Contact Section */
